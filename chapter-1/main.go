@@ -13,6 +13,14 @@ func swap(x, y string) (string, string) {
 	return y, x
 }
 
+// naked return, return dengan nama
+func getParent(child string) (father, mother string) {
+	father = child + " father"
+	mother = child + " mother"
+
+	return
+}
+
 func main() {
 	// 01 - hello world
 	fmt.Println("Hello World!")
@@ -25,6 +33,8 @@ func main() {
 
 		// fungsi dengan banyak return
 		fmt.Println(swap("hello", "world"))
-
+		
+		// naked return, return dengan nama
+		fmt.Println(getParent("dimas"))
 }
 
