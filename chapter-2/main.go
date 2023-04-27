@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 )
 
@@ -17,6 +18,12 @@ func belajarDefer() {
 type WebApp struct {
 	backend string
 	frontend string
+}
+
+// 04 - struct tag / meta
+type Employee struct {
+	EmployeeName string `json:"employee_name"`
+	Age  int    `json:"age"`
 }
 
 func main() {
@@ -63,4 +70,24 @@ func main() {
 		pointerWeb := &WebApp{}				// pointerWeb bertipe *WebApp
 		fmt.Println(j, k, l, pointerWeb)
 
+	// 04 - struct tag / meta
+	// struct to json
+	dimaStruct := Employee{"Dimas Saputro", 21}
+	dimasJson, err := json.Marshal(dimaStruct)
+	if err != nil {
+		fmt.Println("Gagal")
+	} else {
+		fmt.Println(string(dimasJson))
+	}
+
+		// json to struct
+		// json harus menggunakan backticks `
+		anggaJson := `{"employee_name": "Angga", "age": 18}`
+		var anggaStruct Employee
+		err = json.Unmarshal([]byte(anggaJson), &anggaStruct)
+		if err != nil {
+			fmt.Println(err.Error())
+		} else {
+			fmt.Println(anggaStruct)
+		}
 }
