@@ -79,5 +79,15 @@ func main() {
 		var b bool		// false
 		var s string	// ""
 		fmt.Printf("%v %v %v %q\n", i2, f, b, s)
+
+		// konversi tipe
+		// var i3 int = 42
+		// var f2 float64 = float64(i)
+		// var u uint = uint(f)
+		i3 := 42
+		f2 := float64(i)
+		u := uint(f)
+		fmt.Println(i3, f2, u);
+
 }
 
