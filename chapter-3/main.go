@@ -31,6 +31,11 @@ func (h Human) makan() {
 	fmt.Println(h.Name, "telah makan")
 }
 
+// 03 - pointer receiver
+func (h *Human) ulangTahun() {
+	h.Age += 1
+}
+
 func main() {
 	// 01 - fungsi closure
 	fib := fibonaci()
@@ -44,5 +49,10 @@ func main() {
 
 	// plant := Plant{"mawar", 2}
 	// plant.makan() -> error
+
+	// 03 - pointer receiver
+	fmt.Println("umur before:", human.Age)
+	human.ulangTahun()
+	fmt.Println("umur after:", human.Age)
 
 }
