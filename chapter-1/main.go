@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/cmplx"
 	"math/rand"
 )
 
@@ -31,6 +32,13 @@ var python string
 	// deklarasi variable singkat
 	// country := "indonesia" -> error
 
+// 05 - tipe dasar, konversi, inferensi tipe
+var (
+	ToBe   bool       = false
+	MaxInt uint64     = 1<<64 - 1
+	sq      complex128 = cmplx.Sqrt(-5 + 12i)
+)
+
 
 func main() {
 	// 01 - hello world
@@ -59,5 +67,10 @@ func main() {
 		// deklarasi variable singkat
 		fruit := "jambu"
 		fmt.Println(fruit)
+	
+	// 05 - tipe dasar, konversi, inferensi tipe
+	fmt.Printf("Type: %T Value: %v\n", ToBe, ToBe)
+	fmt.Printf("Type: %T Value: %v\n", MaxInt, MaxInt)
+	fmt.Printf("Type: %T Value: %v\n", sq, sq)
 }
 
