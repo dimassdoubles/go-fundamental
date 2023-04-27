@@ -90,4 +90,92 @@ func main() {
 		} else {
 			fmt.Println(anggaStruct)
 		}
+
+	// 05 - array, slice, looping dengan range
+	var buahBuahan [3]string
+	buahBuahan[0] = "melon"
+	fmt.Println(buahBuahan[0])
+
+	pegawaiSts := [5]string{"dimas", "agus", "angga", "brian", "ozi"}
+	fmt.Println(pegawaiSts[0])
+		
+		// slice
+		primes := [6]int{2, 3, 5, 7, 11, 13}
+
+		var s []int = primes[1:4] // [3 5 7]
+		fmt.Println(s)
+
+		// mengubah elemen slice 
+		// akan mengubah elemen arraynya
+		s[0] = 100
+		fmt.Println(primes) // [2 100 5 7 11 13]
+
+		// inisialisasi slice
+		sliceMakanan := []string{"martabak", "bebek goreng", "soto"}
+		fmt.Println(sliceMakanan)
+
+		// nilai default slice
+		arrayMinuman := [3]string{"sirup", "kopi", "teh"}
+		sliceMinuman1 := arrayMinuman[:]  // default [0:3], 3 adalah panjang arrayMinuman
+		sliceMinuman2 := arrayMinuman[:3]
+		sliceMinuman3 := arrayMinuman[0:]
+		// sliceMinuman1 - 3 sama
+		fmt.Println(sliceMinuman1, sliceMinuman2, sliceMinuman3)
+
+		// panjang dan kapasitas
+		sliceA := []int{1, 2, 3, 4}
+		// kapasitas adalah panjang maksimal yang bisa dimiliki slice
+		fmt.Println("panjang sliceA", len(sliceA), ",kapasitas sliceA", cap(sliceA))
+		sliceA = sliceA[: 0]
+		fmt.Println("panjang sliceA", len(sliceA), ",kapasitas sliceA", cap(sliceA))
+		sliceA = sliceA[:2]
+		fmt.Println("panjang sliceA", len(sliceA), ",kapasitas sliceA", cap(sliceA))
+
+		// slice kosong
+		var emptySlice []int
+		fmt.Println("panjang emptySlice", len(emptySlice), ",kapasitas emptySlice", cap(emptySlice))
+		if emptySlice == nil {
+			fmt.Println("nil!")
+		}
+
+		// membuat slice dengan make
+		mySlice := make([]int, 5)
+		fmt.Println(len(mySlice))
+
+		// nested slice
+		board := [][]string{
+					[]string{"_", "_", "_"},
+					[]string{"_", "_", "_"},
+					[]string{"_", "_", "_"},
+				}
+		board[0][1] = "X"
+		board[1][1] = "O"
+		board[2][1] = "X"
+		fmt.Println(board)
+
+		// menambahkan elemen ke slice
+		var sliceKu []int
+		sliceKu = append(sliceKu, 1)
+		fmt.Println(sliceKu)
+		sliceKu = append(sliceKu, 2, 3, 4)
+		fmt.Println(sliceKu)
+
+		// looping dengan for
+		sliceX := []string{"a", "b", "c"}
+		for i, v := range(sliceX) {
+			fmt.Println(i, v)
+		}
+			// jika perlu indeks saja
+			for i, _ := range(sliceX) {
+				fmt.Println(i)
+			}
+
+			for i := range(sliceX) {
+				fmt.Println(i)
+			}
+
+			// jika perlu value saja
+			for _, v := range(sliceX) {
+				fmt.Println(v)
+			}
 }
