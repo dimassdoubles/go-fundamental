@@ -97,5 +97,10 @@ func main() {
 		fmt.Printf("f3 bertipe %T\n", f3)
 		fmt.Printf("g bertipe %T\n", g)
 
+	// 06 - Kontanta
+	const shape = "Lingkaran"
+	const pi = 3.14
+	// const  := "test" -> error
+	fmt.Println("pi untuk", shape, "adalah", pi)
 }
 
