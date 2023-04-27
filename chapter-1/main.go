@@ -89,5 +89,13 @@ func main() {
 		u := uint(f)
 		fmt.Println(i3, f2, u);
 
+		// inferensi tipe
+		m := 42           	// int
+		f3 := 3.142        	// float64
+		g := 0.867 + 0.5i 	// complex128
+		fmt.Printf("m bertipe %T\n", m)
+		fmt.Printf("f3 bertipe %T\n", f3)
+		fmt.Printf("g bertipe %T\n", g)
+
 }
 
