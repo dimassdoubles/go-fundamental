@@ -111,10 +111,10 @@ func main() {
 		fmt.Printf("g bertipe %T\n", g)
 
 	// 06 - Kontanta
-	const shape = "Lingkaran"
-	const pi = 3.14
+	const Shape = "Lingkaran"
+	const Pi = 3.14
 	// const  := "test" -> error
-	fmt.Println("pi untuk", shape, "adalah", pi)
+	fmt.Println("pi untuk", Shape, "adalah", Pi)
 
 		// konstanta numerik (untuk nilai dengan presisi tinggi)
 		fmt.Println(Big * 0.5);
@@ -138,5 +138,21 @@ func main() {
 			sum2 += 1
 		}
 		fmt.Println(sum2)
+
+	// 08 - Kondisional
+	shape := "Kotak"
+	if shape == "Kotak" {
+		fmt.Println("Bentuk adalah kotak")
+	} else {
+		fmt.Println("Bentuk tidak Kotak")
+	}
+
+		// kondisi if singkat
+		h := 5
+		if r := h + 7; r < 10 {
+			fmt.Println("H kurang dari 3")
+		} else {
+			fmt.Println("H lebih dari atau sama dengan 3")
+		}
 }
 
