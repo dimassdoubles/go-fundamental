@@ -208,4 +208,16 @@ func main() {
 				fmt.Println("key tidak terdaftar")
 			}
 
+	// 07 - iterate map
+	mymap := map[string]int {
+		"f": 1,
+		"e": 2,
+		"d": 3,
+		"b": 4,
+		"c": 5,
+		"a": 6,
+	}
+	for key, value := range mymap {
+		fmt.Println(key, value)
+	}			
 }
