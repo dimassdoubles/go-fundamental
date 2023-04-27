@@ -119,5 +119,24 @@ func main() {
 		// konstanta numerik (untuk nilai dengan presisi tinggi)
 		fmt.Println(Big * 0.5);
 		fmt.Println(needFloat(Small))
+
+	// 07 - Pengulangan
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+	}
+
+		// pengulangan lanjutan
+		sum := 0
+		for ; sum < 5 ; {
+			sum += 1
+		}
+		fmt.Println(sum)
+
+		// while di go
+		sum2 := 0
+		for sum2 < 10 {
+			sum2 += 1
+		}
+		fmt.Println(sum2)
 }
 
