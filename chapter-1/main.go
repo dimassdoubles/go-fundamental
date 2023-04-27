@@ -21,6 +21,11 @@ func getParent(child string) (father, mother string) {
 	return
 }
 
+// 04 - variable
+var c bool
+var python string
+
+
 func main() {
 	// 01 - hello world
 	fmt.Println("Hello World!")
@@ -36,5 +41,9 @@ func main() {
 		
 		// naked return, return dengan nama
 		fmt.Println(getParent("dimas"))
+
+	// 04 - variable
+	var i int
+	fmt.Println(i, c, python)
 }
 
