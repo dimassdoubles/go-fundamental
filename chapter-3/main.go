@@ -16,10 +16,33 @@ func fibonaci() func() int {
 	}
 }
 
+// 02 - method
+type Human struct {
+	Name string
+	Age int
+}
+
+type Plant struct {
+	Name string
+	Age int
+}
+
+func (h Human) makan() {
+	fmt.Println(h.Name, "telah makan")
+}
+
 func main() {
 	// 01 - fungsi closure
 	fib := fibonaci()
 	for i := 0; i < 10; i++ {
 		fmt.Println(fib())
 	}
+
+	// 02 - method
+	human := Human{"dimas", 21}
+	human.makan()
+
+	// plant := Plant{"mawar", 2}
+	// plant.makan() -> error
+
 }
