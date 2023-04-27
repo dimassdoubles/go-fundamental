@@ -9,6 +9,10 @@ func add(x, y int) int {
 	return x + y
 }
 
+func swap(x, y string) (string, string) {
+	return y, x
+}
+
 func main() {
 	// 01 - hello world
 	fmt.Println("Hello World!")
@@ -18,6 +22,9 @@ func main() {
 
 	// 03 - function
 	fmt.Println(add(25, 31))
+
+		// fungsi dengan banyak return
+		fmt.Println(swap("hello", "world"))
 
 }
 
