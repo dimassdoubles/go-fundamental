@@ -72,5 +72,12 @@ func main() {
 	fmt.Printf("Type: %T Value: %v\n", ToBe, ToBe)
 	fmt.Printf("Type: %T Value: %v\n", MaxInt, MaxInt)
 	fmt.Printf("Type: %T Value: %v\n", sq, sq)
+
+		// nilai kosong (nilai default tipe data)
+		var i2 int 		// 0
+		var f float64 	// 0
+		var b bool		// false
+		var s string	// ""
+		fmt.Printf("%v %v %v %q\n", i2, f, b, s)
 }
 
