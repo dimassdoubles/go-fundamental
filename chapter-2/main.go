@@ -178,4 +178,34 @@ func main() {
 			for _, v := range(sliceX) {
 				fmt.Println(v)
 			}
+	// 06 - map
+	mapku := make(map[string]string)
+	mapku["makanan"] = "bakso"
+	fmt.Println(mapku["makanan"])
+			
+			// inisialisasi map
+			map2 := map[string]string {
+				"key1": "value1",
+				"key2": "value2",
+			}
+			fmt.Println(map2)
+
+			// operasi map
+			// mengisi map
+			map2["key3"] = "value3"
+			// mengambil elemen map
+			elemenke3 := map2["key3"]
+			fmt.Println(elemenke3)
+			// menghapus elemen map
+			delete(map2, "key3")
+			fmt.Println(map2)
+
+			// menguji apakah key ada di dalam map
+			value, exist := map2["key3"]
+			if (exist) {
+				fmt.Println(value)
+			} else {
+				fmt.Println("key tidak terdaftar")
+			}
+
 }
