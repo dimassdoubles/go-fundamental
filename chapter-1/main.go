@@ -39,6 +39,19 @@ var (
 	sq      complex128 = cmplx.Sqrt(-5 + 12i)
 )
 
+// 06 konstanta numerik
+const (
+	// Buat bilangan yang besar dengan men-shift 1 bit ke kiri 100 kali.
+	// Dengan kata lain, bilangan binari 1 diikuti dengan 100 angka nol.
+	Big = 1 << 100
+	// Shift kembali ke kanan sebanyak 99 kali, sehingga akhirnya menjadi
+	// 1<<1, atau 2
+	Small = Big >> 99 
+)
+func needFloat(x float64) float64 {
+	return x * 0.1
+}
+
 
 func main() {
 	// 01 - hello world
@@ -102,5 +115,9 @@ func main() {
 	const pi = 3.14
 	// const  := "test" -> error
 	fmt.Println("pi untuk", shape, "adalah", pi)
+
+		// konstanta numerik (untuk nilai dengan presisi tinggi)
+		fmt.Println(Big * 0.5);
+		fmt.Println(needFloat(Small))
 }
 
