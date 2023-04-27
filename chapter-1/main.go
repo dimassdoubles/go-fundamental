@@ -28,6 +28,9 @@ var python string
 	// variable dengan inisialisasi
 	var a, b int = 1, 2
 
+	// deklarasi variable singkat
+	// country := "indonesia" -> error
+
 
 func main() {
 	// 01 - hello world
@@ -52,5 +55,9 @@ func main() {
 		// variable dengan inisialisasi
 		var x, y, z = true, false, "no!"
 		fmt.Println(a,b, x, y, z)
+
+		// deklarasi variable singkat
+		fruit := "jambu"
+		fmt.Println(fruit)
 }
 
