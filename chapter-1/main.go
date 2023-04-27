@@ -25,6 +25,9 @@ func getParent(child string) (father, mother string) {
 var c bool
 var python string
 
+	// variable dengan inisialisasi
+	var a, b int = 1, 2
+
 
 func main() {
 	// 01 - hello world
@@ -45,5 +48,9 @@ func main() {
 	// 04 - variable
 	var i int
 	fmt.Println(i, c, python)
+
+		// variable dengan inisialisasi
+		var x, y, z = true, false, "no!"
+		fmt.Println(a,b, x, y, z)
 }
 
