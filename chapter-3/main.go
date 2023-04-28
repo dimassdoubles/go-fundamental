@@ -36,6 +36,24 @@ func (h *Human) ulangTahun() {
 	h.Age += 1
 }
 
+// 04 - interface, interface kosong
+type Mamalia interface {
+	Menyusui()
+}
+
+func (h Human) Menyusui() {
+	fmt.Println("human", h.Name, "menyusui")
+}
+
+type Animal struct {
+	Name string
+	Age int
+}
+
+func (a *Animal) Menyusui() {
+	fmt.Println("animal", a.Name, "menyusui")
+}
+
 func main() {
 	// 01 - fungsi closure
 	fib := fibonaci()
@@ -55,4 +73,11 @@ func main() {
 	human.ulangTahun()
 	fmt.Println("umur after:", human.Age)
 
+	// 04 - interface / interface kosong
+	var mamalia Mamalia
+	myMom := Human{"Mommy", 40}
+	mamalia = myMom
+	mamalia.Menyusui()
+	mamalia = &Animal{"Heli", 3}
+	mamalia.Menyusui()
 }
