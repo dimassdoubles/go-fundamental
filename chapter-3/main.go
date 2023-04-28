@@ -106,6 +106,25 @@ func masakRendang() {
 	fmt.Println("Rendang siap dihidangkan")
 }
 
+// 09 - channel
+func pesanMie(dapur chan string) {
+	fmt.Println("Mulai memasak mie")
+	for i := 0; i < 3; i++ {
+		time.Sleep(100 * time.Millisecond)
+		fmt.Println("Mie on process")
+	}
+	dapur <- "Mie siap dihidangkan"
+}
+
+func pesanRendang(dapur chan string) {
+	fmt.Println("Mulai masak rendang")
+	for i := 0; i < 6; i++ {
+		time.Sleep(100 * time.Millisecond)
+		fmt.Println("Rendang on process")
+	}
+	dapur <- "Rendang siap dihidangkan"
+}
+
 func main() {
 	// 01 - fungsi closure
 	fib := fibonaci()
@@ -167,4 +186,22 @@ func main() {
 	go masakRendang()
 	masakMie()
 
+
+	// 09 - channel
+	dapur := make(chan string)
+	go pesanRendang(dapur)
+	go pesanMie(dapur)
+
+	fmt.Println(<-dapur)
+	fmt.Println(<-dapur)
+
+		// channel dengan buffer
+		dapur2 := make(chan string, 2)
+		pesanRendang(dapur2)
+		pesanMie(dapur2)
+		pesanRendang(dapur2) // error karena dapur 2 hanya bisa melayani 2 pesanan
+
+		fmt.Println(<-dapur2)
+		fmt.Println(<-dapur2)
+		fmt.Println(<-dapur2)
 }
