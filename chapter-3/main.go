@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 // 01 - fungsi closure
@@ -86,6 +87,25 @@ func getError() error {
 	return MyError{"Ini error yang saya buat sendiri"}
 }
 
+// 08 - go routine
+func masakMie() {
+	fmt.Println("Mulai memasak mie")
+	for i := 0; i < 3; i++ {
+		time.Sleep(100 * time.Millisecond)
+		fmt.Println("Mie on process")
+	}
+	fmt.Println("Mie siap dihidangkan")
+}
+
+func masakRendang() {
+	fmt.Println("Mulai masak rendang")
+	for i := 0; i < 6; i++ {
+		time.Sleep(100 * time.Millisecond)
+		fmt.Println("Rendang on process")
+	}
+	fmt.Println("Rendang siap dihidangkan")
+}
+
 func main() {
 	// 01 - fungsi closure
 	fib := fibonaci()
@@ -142,5 +162,9 @@ func main() {
 	if err:= getError(); err!= nil {
 		fmt.Println(err)
 	}
+
+	// 08 - go routine
+	go masakRendang()
+	masakMie()
 
 }
