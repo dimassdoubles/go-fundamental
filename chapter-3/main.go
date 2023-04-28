@@ -54,6 +54,20 @@ func (a *Animal) Menyusui() {
 	fmt.Println("animal", a.Name, "menyusui")
 }
 
+
+// 05 - penegasan tipe
+func checkType(x interface{}) {
+	switch t := x.(type) {
+	case int:
+		fmt.Println(x, "adalah int")
+	case string:
+		fmt.Println(x, "adalah string")
+	default:
+		fmt.Println("tipe", t, "tidak diketahui")
+	}
+
+}
+
 func main() {
 	// 01 - fungsi closure
 	fib := fibonaci()
@@ -80,4 +94,27 @@ func main() {
 	mamalia.Menyusui()
 	mamalia = &Animal{"Heli", 3}
 	mamalia.Menyusui()
+
+	// 05 - penegasan tipe
+	var universal interface{} = "world"
+
+	s := universal.(string)
+	fmt.Println(s)
+
+	s, canCasting := universal.(string)
+	if canCasting {
+		fmt.Println(s, "adalah string")
+	}
+
+	j, canCasting := universal.(int)
+	if (!canCasting) {
+		fmt.Println(universal, "bukan int")
+		fmt.Println(j)
+	}
+
+		// switch dengan tipe
+		checkType(10)
+		checkType("hello")
+		checkType(human)
+
 }
