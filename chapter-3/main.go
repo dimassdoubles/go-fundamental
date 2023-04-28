@@ -73,6 +73,19 @@ func (h Human) String() string {
 	return fmt.Sprint("Aku adalah human dengan nama ", h.Name, " dan berumur ", h.Age, " tahun")
 }
 
+// 07 - error
+type MyError struct {
+	Message string
+}
+
+func (err MyError) Error() string {
+	return err.Message
+}
+
+func getError() error {
+	return MyError{"Ini error yang saya buat sendiri"}
+}
+
 func main() {
 	// 01 - fungsi closure
 	fib := fibonaci()
@@ -124,5 +137,10 @@ func main() {
 
 	// 06 - stringer
 	fmt.Println(human)
+
+	// 07 - Error
+	if err:= getError(); err!= nil {
+		fmt.Println(err)
+	}
 
 }
