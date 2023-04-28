@@ -68,6 +68,11 @@ func checkType(x interface{}) {
 
 }
 
+// 06 - stringer
+func (h Human) String() string {
+	return fmt.Sprint("Aku adalah human dengan nama ", h.Name, " dan berumur ", h.Age, " tahun")
+}
+
 func main() {
 	// 01 - fungsi closure
 	fib := fibonaci()
@@ -116,5 +121,8 @@ func main() {
 		checkType(10)
 		checkType("hello")
 		checkType(human)
+
+	// 06 - stringer
+	fmt.Println(human)
 
 }
